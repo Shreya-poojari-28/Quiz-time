@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #CCE2C2;
+    padding: 0 150px;
+}
+
+.quiz-logo {
+    height: 100px;
+    width: 200px;
+}
+
+.music-icon {
+    height: 30px;
+    width: 30px;
+}
+
+.question-number {
+    width: 100px;
+    height: 50px;
+    background-color: #FEC33D;
+    border-radius: 7px;   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 27px;
+    font-weight: 600;
+    font-family: 'poppins', sans-serif;
+    margin-top: 10px;
+    
+}
+
+.music-q-no {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    width: 100%;
+    padding: 0 30px;
+}
