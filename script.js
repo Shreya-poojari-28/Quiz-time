@@ -33,3 +33,19 @@ function updateCountdown() {
     }
 }
 
+const musicMute = document.querySelector('.mute')
+const musicOn = document.querySelector('.music-icon')
+const img = document.querySelector('#muted-img')
+const audio = document.querySelector('.audio')
+
+musicOn.addEventListener('click', () => {
+    musicOn.classList.toggle('mute')
+    if(musicOn.classList.contains('mute')) {
+        musicOn.src = './images/volume mute_.svg'
+        audio.muted = true
+    } else {
+        musicOn.src = './images/music.svg'
+        audio.muted = false
+    }
+})
+
