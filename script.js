@@ -22,7 +22,7 @@ function updateCountdown() {
     const body = document.body;
     const countdown = document.getElementById('countdown');
 
-    if ((time <= (startingTime * 60) / 2) && (time >= (startingTime * 60) / 6)) {
+    if ((time < (startingTime * 60) / 2) && (time >= (startingTime * 60) / 6)) {
         body.style.backgroundColor = '#E4E5C7';
         countdown.style.backgroundColor = '#ccbf3a'
         countdown.style.boxShadow = 'inset 0px -5px 0px #d1ca65'
@@ -40,12 +40,18 @@ const audio = document.querySelector('.audio')
 
 musicOn.addEventListener('click', () => {
     musicOn.classList.toggle('mute')
-    if(musicOn.classList.contains('mute')) {
+    audio.classList.toggle('mute')
+    if(musicOn.classList.contains('mute') && audio.classList.contains('mute')) {
         musicOn.src = './images/volume mute_.svg'
-        audio.muted = true
+        audio.pause()
     } else {
         musicOn.src = './images/music.svg'
-        audio.muted = false
+        audio.play()
     }
+
+    
 })
+
+
+
 
