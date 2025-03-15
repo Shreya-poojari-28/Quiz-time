@@ -1,3 +1,24 @@
+const questions = [
+    {
+        question: "Inside which HTML element do we put the JavaScript?",
+        answers: [
+            {text: "<js>", correct: "false"},
+            {text: "<scripting>", correct: "false"},
+            {text: "<javascript>", correct: "false"},
+            {text: "<script>", correct: "true"},
+        ]
+    },
+    {
+        question: "Which is the smallest continent in the world?",
+        answers: [
+            {text: "Asia", correct: "false"},
+            {text: "Australia", correct: "true"},
+            {text: "Arctic", correct: "false"},
+            {text: "Africa", correct: "false"},
+        ]
+    },
+]
+
 const startingTime =  0.5;
 let time = startingTime * 60;
 
@@ -51,6 +72,39 @@ musicOn.addEventListener('click', () => {
 
     
 })
+
+
+const option = document.querySelectorAll('.option')
+const questionText = document.getElementById('question')
+const answersText = document.getElementById("option-container")
+
+let currentQuestionIndex = 0;
+let score = 0;
+
+function startQuiz() {
+    currentQuestionIndex = 0;
+    score = 0;
+    showQuestion();
+}
+
+function showQuestion() {
+    let currentQuestion = questions[currentQuestionIndex]
+    let questionNo = currentQuestionIndex + 1
+    questionText.innerText = questionNo + ". " + currentQuestion.question
+
+    currentQuestion.answers.forEach(answers => {
+        const button = document.createElement('button')
+        button.classList.add("option")
+        button.innerText = answers.text
+        answersText.append(button)
+        if(answers.correct) {
+            button.dataset.correct = answers.correct
+        }
+    })
+}
+
+startQuiz();
+
 
 
 
